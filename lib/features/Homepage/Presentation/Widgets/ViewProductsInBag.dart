@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:size_config/size_config.dart';
+import 'package:techypanther/core/Router/RouteName.dart';
 import 'package:techypanther/core/Styling/AppColors.dart';
 import 'package:techypanther/core/Widgets/AppTextWidget.dart';
 import 'package:techypanther/features/Homepage/Blocs/home_screen_bloc.dart';
@@ -12,7 +15,7 @@ class ViewProductsInBag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: BlocProvider.of<HomeScreenBloc>(context).itemsInBag,
+        stream: BlocProvider.of<HomeScreenBloc>(context).itemsInBagStream,
         builder: (context, AsyncSnapshot<List<Product>> snapshot) {
           if (snapshot.hasData && snapshot.data!.isNotEmpty) {
             return Container(
@@ -41,14 +44,17 @@ class ViewProductsInBag extends StatelessWidget {
                             ),
                           ),
                       itemCount: snapshot.data!.length),
-                  Container(
-                    width: 40.w,
-                    height: double.infinity,
-                    color: AppColors.primary,
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: AppColors.white,
-                      size: 30.s,
+                  InkWell(
+                    onTap: () => Modular.to.pushNamed(RoutesName.myBagViewPage),
+                    child: Container(
+                      width: 40.w,
+                      height: double.infinity,
+                      color: AppColors.primary,
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        color: AppColors.white,
+                        size: 30.s,
+                      ),
                     ),
                   )
                 ],

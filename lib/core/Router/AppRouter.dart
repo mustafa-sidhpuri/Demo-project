@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:techypanther/Demo/SignUpModule.dart';
 import 'package:techypanther/core/Local%20Storage/MySecureStorage.dart';
 import 'package:techypanther/core/Local%20Storage/StorageKeys.dart';
 import 'package:techypanther/core/Network/AppChopperClient.dart';
@@ -11,6 +10,7 @@ import 'package:techypanther/core/Router/RouteName.dart';
 import 'package:techypanther/features/Homepage/HomeScreenModule.dart';
 import 'package:techypanther/features/Login/LoginModule.dart';
 import 'package:techypanther/features/SignUp/Presentation/SignUpViewPage.dart';
+import 'package:techypanther/features/SignUp/SignUpModule.dart';
 
 class CoreModule extends Module {
   @override

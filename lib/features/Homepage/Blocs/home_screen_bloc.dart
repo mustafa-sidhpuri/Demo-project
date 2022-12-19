@@ -48,5 +48,6 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
     log(_addedToBag.value.map((e) => e.title).toString(), name: "Items in bag");
   }
 
-  Stream<List<Product>> get itemsInBag => _addedToBag.stream;
+  Stream<List<Product>> get itemsInBagStream => _addedToBag.stream;
+  List<Product> get itemsInBagList => _addedToBag.stream.value;
 }

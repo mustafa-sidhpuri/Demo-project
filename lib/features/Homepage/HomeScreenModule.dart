@@ -3,6 +3,7 @@ import 'package:techypanther/core/Router/RouteName.dart';
 import 'package:techypanther/features/Homepage/Data/DataSource/HomeScreenChopperService.dart';
 import 'package:techypanther/features/Homepage/Data/HomeScreenRepository.dart';
 import 'package:techypanther/features/Homepage/Presentation/Screens/HomeViewPage.dart';
+import 'package:techypanther/features/Homepage/Presentation/Screens/MyBagViewPage.dart';
 import 'package:techypanther/features/Homepage/Presentation/Screens/ProductsDetailScreen.dart';
 
 class HomeScreenModule extends Module {
@@ -14,5 +15,7 @@ class HomeScreenModule extends Module {
         ChildRoute("/", child: (_, __) => const HomeViewPage()),
         ChildRoute(RoutesName.productDetail,
             child: (_, __) => const ProductDetailViewPage()),
+        ChildRoute(RoutesName.myBagViewPage,
+            child: (_, __) => const MyBagViewPage()),
       ];
 }
