@@ -9,9 +9,10 @@ import 'package:techypanther/features/Login/Data/DataSource/LoginChopperService.
 import 'package:techypanther/features/Login/Data/Model/LoginResponseModel.dart';
 
 class LoginRepository {
-  LoginRepository();
-  final LoginChopperService _loginService =
-      Modular.get<AppChopperClient>().getChopperService<LoginChopperService>();
+  LoginRepository({required LoginChopperService loginService}) {
+    _loginService = loginService;
+  }
+  late LoginChopperService _loginService;
 
   Future<Either<ServerExceptions, LoginResponseModel>> userLogin(
       {required String username, required password}) async {

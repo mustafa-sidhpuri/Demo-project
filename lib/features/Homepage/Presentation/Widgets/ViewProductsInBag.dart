@@ -24,7 +24,7 @@ class ViewProductsInBag extends StatelessWidget {
               height: 70.h,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
+                // mainAxisSize: MainAxisSize.min,
                 children: [
                   const AppTextWidget(
                     txtTitle: "Items in bag:",
@@ -32,18 +32,20 @@ class ViewProductsInBag extends StatelessWidget {
                     txtColor: AppColors.white,
                   ),
                   5.horizontalSpacer,
-                  ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      physics: const ClampingScrollPhysics(),
-                      itemBuilder: (context, index) => Padding(
-                            padding: EdgeInsets.only(right: 5.w),
-                            child: Image.network(
-                              snapshot.data![index].image,
-                              fit: BoxFit.contain,
+                  Expanded(
+                    child: ListView.builder(
+                        // shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        physics: const ClampingScrollPhysics(),
+                        itemBuilder: (context, index) => Padding(
+                              padding: EdgeInsets.only(right: 5.w),
+                              child: Image.network(
+                                snapshot.data![index].image,
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                          ),
-                      itemCount: snapshot.data!.length),
+                        itemCount: snapshot.data!.length),
+                  ),
                   InkWell(
                     onTap: () => Modular.to.pushNamed(RoutesName.myBagViewPage),
                     child: Container(

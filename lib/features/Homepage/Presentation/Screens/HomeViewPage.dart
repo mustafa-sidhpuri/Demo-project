@@ -7,6 +7,7 @@ import 'package:techypanther/core/Styling/AppColors.dart';
 import 'package:techypanther/core/Widgets/AppTextWidget.dart';
 import 'package:techypanther/core/Widgets/CommonAppBar.dart';
 import 'package:techypanther/features/Homepage/Presentation/Widgets/HomeScreenBody.dart';
+import 'package:techypanther/features/Homepage/Presentation/Widgets/ViewProductsInBag.dart';
 
 class HomeViewPage extends StatelessWidget {
   const HomeViewPage({super.key});
@@ -31,6 +32,7 @@ class HomeViewPage extends StatelessWidget {
         ],
       ),
       body: const HomeScreenBody(),
+      bottomNavigationBar: const ViewProductsInBag(),
     );
   }
 

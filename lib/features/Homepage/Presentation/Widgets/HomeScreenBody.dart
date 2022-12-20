@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:size_config/size_config.dart';
 import 'package:techypanther/core/Widgets/AppFlushBar.dart';
 import 'package:techypanther/core/Widgets/AppTextWidget.dart';
 import 'package:techypanther/core/Widgets/LoadingOverlay.dart';
 import 'package:techypanther/features/Homepage/Blocs/home_screen_bloc.dart';
-import 'package:techypanther/features/Homepage/Presentation/Widgets/ProductTile.dart';
 import 'package:techypanther/features/Homepage/Presentation/Widgets/ProductsGridView.dart';
-import 'package:techypanther/features/Homepage/Presentation/Widgets/ViewProductsInBag.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -29,12 +26,7 @@ class HomeScreenBody extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is ProductsLoaded) {
-          return Stack(
-            children: [
-              ProductsGridView(bloc: _bloc),
-              const Positioned(bottom: 0, child:ViewProductsInBag())
-            ],
-          );
+          return ProductsGridView(bloc: _bloc);
         }
         if (state is ProductsFetchError) {
           return const Center(

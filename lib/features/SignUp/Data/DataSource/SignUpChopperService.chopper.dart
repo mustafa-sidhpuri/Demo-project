@@ -19,7 +19,7 @@ class _$SignUpChopperService extends SignUpChopperService {
   @override
   Future<Response<SignupUserResponseModel>> userSignUp(
       Map<String, dynamic> body) {
-    final String $url = '/users';
+    final Uri $url = Uri.parse('/users');
     final $body = body;
     final Request $request = Request(
       'POST',

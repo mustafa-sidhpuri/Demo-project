@@ -18,7 +18,7 @@ class _$HomeScreenChopperService extends HomeScreenChopperService {
 
   @override
   Future<Response<List<Product>>> fetchAllProducts() {
-    final String $url = '/products';
+    final Uri $url = Uri.parse('/products');
     final Request $request = Request(
       'GET',
       $url,

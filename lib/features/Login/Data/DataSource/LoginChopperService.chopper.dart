@@ -18,7 +18,7 @@ class _$LoginChopperService extends LoginChopperService {
 
   @override
   Future<Response<LoginResponseModel>> userLogin(Map<String, dynamic> body) {
-    final String $url = '/auth/login';
+    final Uri $url = Uri.parse('/auth/login');
     final $body = body;
     final Request $request = Request(
       'POST',
